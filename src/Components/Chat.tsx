@@ -1,10 +1,18 @@
 import Message from "./Message";
-import styles from "../styles/Chat.module.scss";
+
 import SendMessage from "./SendMessage";
 import Header from "./Header";
+import { v4 as uuidv4 } from "uuid";
+
+import styles from "../styles/Chat.module.scss";
+
+interface Msg {
+  msg: string;
+  user: string;
+}
 
 interface Props {
-  messages: string[];
+  messages: Msg[];
   msgSend: Function;
 }
 
@@ -14,7 +22,7 @@ function Chat({ messages, msgSend }: Props) {
       <Header />
       <div className={styles.messages}>
         {messages.map((i) => (
-          <Message msg={i} user={false} />
+          <Message key={uuidv4()} msg={i.msg} user={i.user} />
         ))}
       </div>
       <SendMessage msgSend={msgSend} />
@@ -23,43 +31,3 @@ function Chat({ messages, msgSend }: Props) {
 }
 
 export default Chat;
-
-/*
-<div className={styles.messages}>
-        <Message msg={"Uma teoria de One Piece"} user={true} />
-        <Message msg={"Qual teoria?"} user={false} />
-        <Message msg={"blablabla"} user={true} />
-        <Message msg={"bla"} user={true} />
-        <Message
-          msg={
-            " asdas das dasdasasdasdasdasd asas das as asdas d asd asd asasas as asdas dassadasasd as"
-          }
-          user={false}
-        />
-        <Message msg={"Userteste"} user={true} />
-        <Message
-          msg={
-            "asdasdasdasdasdasdas dasd as d as as as as das asdad dfds sd fdsfsdf sdfsdfsdf sd"
-          }
-          user={false}
-        />
-        <Message msg={"lorem ipsum"} user={true} />
-        <Message msg={"blablabla"} user={true} />
-        <Message msg={"bla"} user={true} />
-        <Message
-          msg={
-            " asdas das dasdasasdasdasdasd asas das as asdas d asd asd asasas as asdas dassadasasd as"
-          }
-          user={false}
-        />
-        <Message msg={"Userteste"} user={true} />
-        <Message
-          msg={
-            "asdasdasdasdasdasdas dasd as d as as as as das asdad dfds sd fdsfsdf sdfsdfsdf sd"
-          }
-          user={false}
-        />
-        <Message msg={"lorem ipsum"} user={true} />
-      </div>
-
-*/

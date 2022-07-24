@@ -3,8 +3,13 @@ import { w3cwebsocket as W3CWebSocket } from "websocket";
 import styles from "./styles/App.module.scss";
 import { useEffect, useState, useRef } from "react";
 
+interface Message {
+  msg: string;
+  user: string;
+}
+
 function App() {
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const ws = useRef<W3CWebSocket>();
 
   useEffect(() => {
@@ -12,14 +17,21 @@ function App() {
     ws.current.onopen = () => console.log("ws opened");
     ws.current.onclose = () => console.log("ws closed");
     ws.current.onmessage = (message) => {
-      setMessages((prev) => [...prev, message.data.toString()]);
+      console.log(message);
+      setMessages((prev) => [
+        ...prev,
+        { msg: message.data.toString(), user: "user" },
+      ]);
+    };
+
+    return () => {
+      ws.current?.close();
     };
   }, []);
 
   const handleSendMessage = (message: string) => {
-    if (message === "") return;
     ws.current?.send(message);
-    setMessages((prev) => [...prev, message]);
+    setMessages((prev) => [...prev, { msg: message, user: "me" }]);
   };
 
   return (
