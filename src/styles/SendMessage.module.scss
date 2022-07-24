@@ -1,0 +1,28 @@
+.sendMessage {
+  display: flex;
+  height: 40px;
+  min-height: 40px;
+  width: 350px;
+
+  input {
+    border: none;
+    border-radius: 0 0 0 10px;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0 0.5rem;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: #ef5b0c;
+    border: none;
+    border-radius: 0 0 10px 0;
+    cursor: pointer;
+    height: 100%;
+    width: 80px;
+  }
+}

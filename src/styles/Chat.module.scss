@@ -1,0 +1,21 @@
+.container {
+  background-color: #edf2f4;
+  border-radius: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: space-between;
+  width: 350px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  overflow-y: scroll;
+  padding: 0.6rem 0;
+}

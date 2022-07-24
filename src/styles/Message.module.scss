@@ -1,0 +1,31 @@
+.myContainer {
+  align-items: center;
+  background-color: #e5e5e5;
+  border-radius: 13px 13px 13px 0;
+  display: flex;
+  margin-left: 0.5rem;
+  padding: 1rem;
+  max-width: 150px;
+}
+
+.myMessage {
+  font-size: 0.7rem;
+  margin: 0;
+  word-break: break-word;
+}
+
+.userContainer {
+  align-self: flex-end;
+  background-color: #8ecae6;
+  border-radius: 13px 13px 0 13px;
+  display: flex;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  max-width: 150px;
+}
+
+.userMessage {
+  font-size: 0.7rem;
+  margin: 0;
+  word-break: break-word;
+}
