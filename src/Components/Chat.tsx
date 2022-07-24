@@ -11,7 +11,7 @@ function Chat() {
         <Message msg={"User 1 teste"} user={true} />
         <Message
           msg={
-            "User 2 a asdasdsdsadasdadasdasdsadsadasdasdasdasdasdsadasdasdasdsadasteste"
+            "usadsadsadsadasdasdasasdasdasdasdasdsadasasdsadasdasdasasdasdasdasdasdasdadasdsadsadasdasdasdadasasdasadasdasdasdasdasdasdasdasdasdasdsdsadsadasdasdsadasm"
           }
           user={false}
         />

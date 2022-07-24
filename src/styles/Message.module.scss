@@ -4,8 +4,9 @@
   border-radius: 13px 13px 13px 0;
   display: flex;
   margin-left: 0.5rem;
-  padding: 1rem;
-  max-width: 150px;
+  max-width: 180px;
+  width: fit-content;
+  padding: 0.7rem;
 }
 
 .myMessage {
@@ -20,8 +21,9 @@
   border-radius: 13px 13px 0 13px;
   display: flex;
   margin-right: 0.5rem;
-  padding: 1rem;
-  max-width: 150px;
+  max-width: 180px;
+  width: fit-content;
+  padding: 0.7rem;
 }
 
 .userMessage {
@@ -29,3 +31,5 @@
   margin: 0;
   word-break: break-word;
 }
+
+// max-width: 180px;

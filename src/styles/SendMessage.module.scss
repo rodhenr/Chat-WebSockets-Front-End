@@ -1,6 +1,7 @@
 .sendMessage {
   display: flex;
   height: 40px;
+  margin-top: 0.4rem;
   min-height: 40px;
   width: 350px;
 
@@ -21,8 +22,13 @@
     background-color: #ef5b0c;
     border: none;
     border-radius: 0 0 10px 0;
+    color: #fff;
     cursor: pointer;
     height: 100%;
     width: 80px;
+
+    &:hover {
+      background-color: #d9550f;
+    }
   }
 }
